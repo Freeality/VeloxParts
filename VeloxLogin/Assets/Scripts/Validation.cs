@@ -10,10 +10,10 @@ public class Validation : MonoBehaviour {
 	const string SenhaRegex = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$";
 	const string SenhaDeveConter = "Senha deve conter pelo menos ";
 
-	// Não está funcionando
+	// Faz os testes, retorna o resultado e a mensagem.
 	static public bool ValidatePassword(string password, out string errorMessage) {
 
-		errorMessage = string.Empty;
+		errorMessage = "Tudo certo!";
 
 		if (string.IsNullOrEmpty(password)) {
 			throw new Exception("Senha não pode ser vazia");
@@ -21,7 +21,7 @@ public class Validation : MonoBehaviour {
 
 		Regex hasNumber = new Regex(@"[0-9]+");
 		Regex hasUpperChar = new Regex(@"[A-Z]+");
-		Regex hasMiniMaxChars = new Regex(@".{8,15}$");
+		Regex hasMiniMaxChars = new Regex(@"^.{8,13}$");
 		Regex hasLowerChar = new Regex(@"[a-z]+");
 		Regex hasSymbols = new Regex(@"[!@#$%^&*()_+=\[{\]};:<>|./?,-]");
 
@@ -36,7 +36,7 @@ public class Validation : MonoBehaviour {
 		}
 
 		if (!hasMiniMaxChars.IsMatch(password)) {
-			errorMessage = "Senha deve conter 12 caracteres";
+			errorMessage = "Senha deve conter entre 8 e 12 caracteres";
 			return false;
 		}
 

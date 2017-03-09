@@ -46,6 +46,11 @@ public class SenhaTest {
 	}
 
 	[Test]
+	public void Senha_Senha123Ar_DeveSerInvalida() {
+		Assert.IsTrue(TestaSenha("Senha123@"));
+	}
+
+	[Test]
 	public void Senha_SenhaGrandeA1_DevePassar() {
 
 		Assert.IsTrue (TestaSenha ("SenhaGrande@1"));
