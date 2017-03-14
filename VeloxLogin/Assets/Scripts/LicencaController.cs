@@ -39,7 +39,6 @@ public class LicencaController : MonoBehaviour {
 		}
 
 		if (!isValidPassword) {
-			erro = "Senha inválida";
 			return false;
 		}
 
