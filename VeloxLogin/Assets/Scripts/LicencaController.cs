@@ -20,10 +20,20 @@ public class LicencaController : MonoBehaviour {
 
 		if (EntradaValida (out erro)) {
 			Debug.Log ("Tudo certo!");
+			// chamar o serviço
+			Usuario user = new Usuario(Email.text, Senha.text);
+			if (usuarioValido (user)) {
+				
+			}
 			return;
 		}
 
 		Debug.Log ("Algo errado..." + erro);
+	}
+
+	public bool usuarioValido(Usuario u) {
+		// chamar o serviço
+		// GET http://servidor/conta/{contaJson}
 	}
 
 	bool EntradaValida(out string erro) {
