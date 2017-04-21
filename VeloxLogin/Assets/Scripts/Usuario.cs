@@ -39,4 +39,7 @@ public class Usuario : MonoBehaviour {
 		Email = email;
 		Senha = senha;
 	}
+
+    public Usuario() {
+    }
 }

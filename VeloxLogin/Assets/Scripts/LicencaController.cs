@@ -32,8 +32,9 @@ public class LicencaController : MonoBehaviour {
 	}
 
 	public bool usuarioValido(Usuario u) {
-		// chamar o serviço
-		// GET http://servidor/conta/{contaJson}
+        // chamar o serviço
+        // GET http://servidor/conta/{contaJson}
+        return new Usuario();
 	}
 
 	bool EntradaValida(out string erro) {
